@@ -21,6 +21,7 @@
 
 A Discord bot project made with the npm package discord.js version 14 and it handles Slash commands.
 It have a lot of commands to play with and it is still in development.
+
 **_you can use /help to get list of all commands_**
 
 **Project made with ❤ by Mahfuz#6164**<br>
@@ -47,11 +48,8 @@ You can click on the star (⭐️) button above this repository if you liked thi
 • 1- Download [Visual Studio Code](https://code.visualstudio.com/Download).<br>
 • 2- Download [Node.JS](https://nodejs.org/en/download/) (Check the requirements).<br>
 • 3- Open Visual Studio Code, go to Extensions section and install a JavaScript runner. I choosed **JavaScript (ES6) code snippets**.<br>
-• 4- Download the project by clicking on the badge above this guide `Download For: Visual Studio Code`. If you are using Chrome right now, you should see below that the download has started. <br>
-• 5- After finishing the download, drop the .zip folder into your Desktop, right click on the .zip folder and click on `Extract here`.<br>
-• 6- After extracting the files into a new folder, delete the .zip folder and rename the created folder into any name you want (not important to rename the folder).<br>
-• 7- Open Visual Studio Code, click on `Open folder` and choose the created folder to start a new project.<br>
-• 8- Go to the file `config.json`. Fill or change the values of the variables as you want. Here's the config.js code below and a small guide:
+• 4- Clone the project using Git<br>
+• 5- After finishing the clone go to the file `config.json`. Fill or change the values of the variables as you want. Here's the config.json code below and a small guide:
 
 ```json
 {
@@ -60,8 +58,9 @@ You can click on the star (⭐️) button above this repository if you liked thi
 }
 ```
 
-• 9- Go to terminal and type `npm init -y` to install `package-lock.json` file, and then type in the terminal again `npm install` or `npm i` to install all the required dependencies to run your project.<br>
-• 11- Enjoy! =)
+• 6- Go to terminal and type `npm install` or `npm i` to install all the required dependencies to run your project.<br>
+• 7- After finishing the installation, type `node index.js` to run your project.<br>
+• 8- Enjoy! =)
 
 # Something doesn't work here...
 
