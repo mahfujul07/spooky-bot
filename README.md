@@ -4,10 +4,6 @@
 
 <p align="center">
     <a style="font-size:15px;font-family:verdana"><b>GitHub Repository Statistics/Info:</b></a><br>
-    <img src="https://img.shields.io/github/release/mahfujul07/DiscordJS-V14-Bot-Template?label=Last%20Release">
-    <!--<img src="https://img.shields.io/github/forks/TFAGaming/DiscordJS-V14-Bot-Template?label=Forks&color=32CD32">
-    <img src="https://img.shields.io/github/stars/TFAGaming/DiscordJS-V14-Bot-Template?label=Stars&color=yellow"  -->
-     <img src="https://img.shields.io/github/license/mahfujul07/spooky-bot?label=License&color=808080">
     <img src="https://img.shields.io/github/issues/mahfujul07/spooky-bot?label=Issues&color=yellow">
     <img src="https://img.shields.io/github/issues-closed/mahfujul07/spooky-bot?label=Issues%20Closed&color=32CD32">
     <br>
@@ -25,7 +21,7 @@
 
 A Discord bot project made with the npm package discord.js version 14 and it handles Slash commands.
 It have a lot of commands to play with and it is still in development.
-***you can use /help to get list of all commands***
+**_you can use /help to get list of all commands_**
 
 **Project made with ❤ by Mahfuz#6164**<br>
 You can click on the star (⭐️) button above this repository if you liked this project! Thank you all. 🙏
@@ -60,7 +56,7 @@ You can click on the star (⭐️) button above this repository if you liked thi
 ```json
 {
   "clientId": "1029119033108344843",
-  "token": "your_bot_token",
+  "token": "your_bot_token"
 }
 ```
 
