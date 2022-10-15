@@ -36,14 +36,11 @@ const commands = [
         .setRequired(true)
     ),
 
-    new SlashCommandBuilder()
-    .setName("hug")
-    .setDescription("Hugs a user!")
+  new SlashCommandBuilder()
+    .setName("pat")
+    .setDescription("Pat a user!")
     .addUserOption((option) =>
-      option
-        .setName("user")
-        .setDescription("The user to hug")
-        .setRequired(true)
+      option.setName("user").setDescription("The user to pat").setRequired(true)
     ),
 
   new SlashCommandBuilder()
@@ -67,52 +64,8 @@ const commands = [
     .setDescription("Replies with user avatar!"),
 
   new SlashCommandBuilder()
-    .setName("say")
-    .setDescription("Says a message!")
-    .addStringOption((option) =>
-      option
-        .setName("message")
-        .setDescription("The message to say")
-        .setRequired(true)
-    ),
-
-  new SlashCommandBuilder()
-    .setName("uptime")
-    .setDescription("Shows the uptime of the bot!"),
-
-  new SlashCommandBuilder()
     .setName("owner")
     .setDescription("Shows the owner of the bot!"),
-
-  // new SlashCommandBuilder()
-  //   .setName("balance")
-  //   .setDescription("Shows your balance!"),
-
-  // new SlashCommandBuilder().setName("beg").setDescription("Beg for money!"),
-
-  // new SlashCommandBuilder()
-  //   .setName("daily")
-  //   .setDescription("Get your daily money!"),
-
-  // new SlashCommandBuilder()
-  //   .setName("deposit")
-  //   .setDescription("Deposit money!")
-  //   .addIntegerOption((option) =>
-  //     option
-  //       .setName("amount")
-  //       .setDescription("The amount of money to deposit")
-  //       .setRequired(true)
-  //   ),
-
-  // new SlashCommandBuilder()
-  //   .setName("withdraw")
-  //   .setDescription("Withdraw money!")
-  //   .addIntegerOption((option) =>
-  //     option
-  //       .setName("amount")
-  //       .setDescription("The amount of money to withdraw")
-  //       .setRequired(true)
-  //   ),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "10" }).setToken(token);

@@ -110,12 +110,6 @@ client.on("interactionCreate", async (interaction) => {
     await interaction.reply(interaction.user.displayAvatarURL());
   }
 
-  // say
-  else if (commandName === "say") {
-    const text = interaction.options.getString("text");
-    await interaction.reply(text);
-  }
-
   // bot info
   else if (commandName === "bot") {
     const reply_msg_bot = `
@@ -144,17 +138,12 @@ client.on("interactionCreate", async (interaction) => {
 
   // get bot github link
   else if (commandName === "github") {
-    await interaction.reply("https://github.com");
-  }
-
-  // get the bot uptime
-  else if (commandName === "uptime") {
-    await interaction.reply(`Uptime: ${ms(client.uptime)}`);
+    await interaction.reply("https://github.com/mahfujul07/spooky-bot");
   }
 
   // get the bot owner
   else if (commandName === "owner") {
-    await interaction.reply(`Owner: Mahfujul07#0001`);
+    await interaction.reply(`Owner: Mahfuz#6164`);
   }
 
   // fun command to show random joke
@@ -168,7 +157,7 @@ client.on("interactionCreate", async (interaction) => {
       .setColor("#cc2b5e")
       .setTitle("Joke")
       .setDescription(
-        `**Joke:** ${joke.setup}\n\n**Answer:** ${joke.punchline}`
+        `**Joke:** ${joke.setup}\n\n**Answer:** ||${joke.punchline}||`
       );
     await interaction.reply({ embeds: [embed] });
     console.log(joke);
@@ -181,22 +170,26 @@ client.on("interactionCreate", async (interaction) => {
       .setColor("#cc2b5e")
       .setDescription(
         `**${interaction.user.username}** kissed **${user.username}**`
-      )
-      .setImage("https://media.tenor.com/P6LS9N3VoRwAAAAC/cat.gif");
+      );
+    const kisss = await fetch("https://api.satou-chan.xyz/api/endpoint/kiss")
+      .then((res) => res.json())
+      .then((json) => json);
+    embed.setImage(kisss.url);
     await interaction.reply({ embeds: [embed] });
   }
 
   // hug command
-  else if (commandName === "hug") {
+  else if (commandName === "pat") {
     const user = interaction.options.getUser("user");
     const embed = new EmbedBuilder()
       .setColor("#cc2b5e")
       .setDescription(
-        `**${interaction.user.username}** hugged **${user.username}**`
-      )
-      .setImage(
-        "https://media.tenor.com/a3ygKWVkK3oAAAAC/milky-mocha-bear.gif"
+        `**${interaction.user.username}** patted **${user.username}**`
       );
+    const patt = await fetch("https://api.satou-chan.xyz/api/endpoint/pat")
+      .then((res) => res.json())
+      .then((json) => json);
+    embed.setImage(patt.url);
     await interaction.reply({ embeds: [embed] });
   }
 
@@ -207,13 +200,16 @@ client.on("interactionCreate", async (interaction) => {
       .setColor("#cc2b5e")
       .setDescription(
         `**${interaction.user.username}** slapped **${user.username}**`
-      )
-      .setImage("https://media.tenor.com/nbT_cwrKGjwAAAAC/baby-slap.gif");
+      );
+    const slapp = await fetch("https://api.satou-chan.xyz/api/endpoint/slap")
+      .then((res) => res.json())
+      .then((json) => json);
+    embed.setImage(slapp.url);
     await interaction.reply({ embeds: [embed] });
   }
-  
 
   console.log(interaction);
+  
 });
 
 // Login to Discord with your client's token
