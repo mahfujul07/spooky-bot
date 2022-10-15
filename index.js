@@ -41,11 +41,15 @@ client.on("interactionCreate", async (interaction) => {
           "/server - Info about the server \n" +
           "/user - Info of the user \n" +
           "/avatar - avatar of user \n" +
-          "/kick - kicks a member \n" +
-          "/ban - ban a member \n" +
-          "/mute - mute a member \n" +
-          "/unmute - unmute a member \n" +
-          "/help - get help commands \n" +
+          "/bot - Info about the bot \n" +
+          "/slap - Slap a user \n" +
+          "/kiss - Kiss a user \n" +
+          "/pat - Pat a user \n" +
+          "/joke - Sends a funny joke \n" +
+          "/invite - Invite the bot to your server \n" +
+          "/support - Join the support server \n" +
+          "/github - Shows the github repo \n" +
+          "/owner - Shows the owner of the bot \n" +
           "```"
       );
 
@@ -62,7 +66,7 @@ client.on("interactionCreate", async (interaction) => {
         new ButtonBuilder()
           .setLabel("Support")
           .setStyle(ButtonStyle.Link)
-          .setURL("https://discord.gg/invite")
+          .setURL("https://discord.gg/npcmpRmdTU")
       )
       .addComponents(
         new ButtonBuilder()
@@ -209,7 +213,6 @@ client.on("interactionCreate", async (interaction) => {
   }
 
   console.log(interaction);
-  
 });
 
 // Login to Discord with your client's token

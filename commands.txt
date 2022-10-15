@@ -1,0 +1,14 @@
+/ping..
+/help..
+/server..
+/user..
+/avatar..
+/bot..
+/invite..
+/support..
+/github..
+/owner..
+/jokw..
+/kiss..
+/pat..
+/slap..
