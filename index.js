@@ -80,16 +80,17 @@ client.on("interactionCreate", async (interaction) => {
   // server info
   if (commandName === "server") {
     const reply_msg_server = `
-    Server name: ${interaction.guild.name}\n
-    Total members: ${interaction.guild.memberCount}\n
-    Created at: ${interaction.guild.createdAt.toDateString()}\n
-    Boost count: ${interaction.guild.premiumSubscriptionCount}\n
-    Channels: ${interaction.guild.channels.cache.size}\n
-    Roles: ${interaction.guild.roles.cache.size}\n
-    Emojis: ${interaction.guild.emojis.cache.size}
+Server name: ${interaction.guild.name}\n
+Total members: ${interaction.guild.memberCount}\n
+Created at: ${interaction.guild.createdAt.toDateString()}\n
+Boost count: ${interaction.guild.premiumSubscriptionCount}\n
+Channels: ${interaction.guild.channels.cache.size}\n
+Roles: ${interaction.guild.roles.cache.size}\n
+Emojis: ${interaction.guild.emojis.cache.size}
     `;
 
     const embed = new EmbedBuilder()
+      .setColor("#cc2b5e")
       .setTitle("Server info")
       .setDescription("```" + reply_msg_server + "```");
     await interaction.reply({ embeds: [embed] });
@@ -98,31 +99,38 @@ client.on("interactionCreate", async (interaction) => {
   // user info
   else if (commandName === "user") {
     const reply_msg_user = `
-      Your tag: ${interaction.user.tag}\n
-      Your id: ${interaction.user.id}\n
-      Member since: ${interaction.member.joinedAt}\n
-      Roles: ${interaction.member.roles.cache.size}
+Your tag: ${interaction.user.tag}\n
+Your id: ${interaction.user.id}\n
+Member since: ${interaction.member.joinedAt.toDateString()}\n
+Roles: ${interaction.member.roles.cache.size}
       `;
     const embed = new EmbedBuilder()
+      .setColor("#cc2b5e")
       .setTitle("User info")
       .setDescription("``` \n" + reply_msg_user + "```");
     await interaction.reply({ embeds: [embed] });
   }
 
-  // avatar
+  // showes mention user avatar
   else if (commandName === "avatar") {
-    await interaction.reply(interaction.user.displayAvatarURL());
+    const user = interaction.options.getUser("user");
+    const embed = new EmbedBuilder()
+      .setColor("#cc2b5e")
+      .setTitle("Avatar")
+      .setImage(user.displayAvatarURL({ dynamic: true, size: 512 }));
+    await interaction.reply({ embeds: [embed] });
   }
 
   // bot info
   else if (commandName === "bot") {
     const reply_msg_bot = `
-    Bot name: ${client.user.tag}\n
-    Bot id: ${client.user.id}\n
-    Created at: ${client.user.createdAt.toDateString()}\n
-    Bot version: 1.0.0\n
+Bot name: ${client.user.tag}\n
+Bot id: ${client.user.id}\n
+Created at: ${client.user.createdAt.toDateString()}\n
+Bot version: 1.0.0\n
     `;
     const embed = new EmbedBuilder()
+      .setColor("#cc2b5e")
       .setTitle("Bot info")
       .setDescription("``` \n" + reply_msg_bot + "```");
     await interaction.reply({ embeds: [embed] });
@@ -164,7 +172,6 @@ client.on("interactionCreate", async (interaction) => {
         `**Joke:** ${joke.setup}\n\n**Answer:** ||${joke.punchline}||`
       );
     await interaction.reply({ embeds: [embed] });
-    console.log(joke);
   }
 
   // kiss command
@@ -212,6 +219,7 @@ client.on("interactionCreate", async (interaction) => {
     await interaction.reply({ embeds: [embed] });
   }
 
+  // console.log(interaction.user.tag + " - " + commandName);
   console.log(interaction);
 });
 

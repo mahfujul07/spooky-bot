@@ -1,10 +1,9 @@
 {
   "name": "spooky-bot",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is a Discord bot made for fun and cool commands",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
     "dev": "nodemon index.js"
   },

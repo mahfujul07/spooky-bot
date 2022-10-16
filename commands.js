@@ -61,7 +61,13 @@ const commands = [
 
   new SlashCommandBuilder()
     .setName("avatar")
-    .setDescription("Replies with user avatar!"),
+    .setDescription("Shows the avatar of a user!")
+    .addUserOption((option) =>
+      option
+        .setName("user")
+        .setDescription("The user to show avatar")
+        .setRequired(true)
+    ),
 
   new SlashCommandBuilder()
     .setName("owner")
