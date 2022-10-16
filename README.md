@@ -47,7 +47,7 @@ You can click on the star (⭐️) button above this repository if you liked thi
 
 • 1- Download [Visual Studio Code](https://code.visualstudio.com/Download).<br>
 • 2- Download [Node.JS](https://nodejs.org/en/download/) (Check the requirements).<br>
-• 3- Open Visual Studio Code, go to Extensions section and install a JavaScript runner. I choosed **JavaScript (ES6) code snippets**.<br>
+• 3- Open Visual Studio Code, go to Extensions section and install a JavaScript runner. I choosed **JavaScript (ES7) code snippets**.<br>
 • 4- Clone the project using Git<br>
 • 5- After finishing the clone go to the file `config.json`. Fill or change the values of the variables as you want. Here's the config.json code below and a small guide:
 
