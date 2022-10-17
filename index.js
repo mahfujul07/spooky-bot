@@ -10,9 +10,18 @@ const {
   ButtonStyle,
 } = require("discord.js");
 const { token } = require("./config.json");
+const Airtable = require("airtable");
+const ytdl = require("ytdl-core");
+const fs = require("fs");
 
 // Create a new client instance
-const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+const client = new Client({
+  intents: [
+    GatewayIntentBits.Guilds,
+    GatewayIntentBits.GuildMessages,
+    GatewayIntentBits.GuildMessageReactions,
+  ],
+});
 
 // When the client is ready, run this code (only once)
 client.once("ready", () => {
@@ -218,9 +227,78 @@ Bot version: 1.0.0\n
     embed.setImage(slapp.url);
     await interaction.reply({ embeds: [embed] });
   }
+  //  stores user info in airtable database
+  if (commandName === "store") {
+    const user = interaction.options.getUser("user");
+    const base = new Airtable({ apiKey: "keywtxbXnsRkAHWf9" }).base(
+      "appwB2jkKjE9TCfuP"
+    );
 
-  // console.log(interaction.user.tag + " - " + commandName);
-  console.log(interaction);
+    base("users").create(
+      [
+        {
+          fields: {
+            name: user.username + "#" + user.discriminator,
+            user_id: user.id,
+            avatar: user.displayAvatarURL({ dynamic: true, size: 512 }),
+          },
+        },
+      ],
+      function (err, records) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        records.forEach(function (record) {
+          console.log(record.getId());
+        });
+      }
+    );
+    await interaction.reply("User stored successfully");
+  }
+
+  // get user info from airtable database
+  else if (commandName === "show") {
+    const user = interaction.options.getUser("user");
+    const base = new Airtable({ apiKey: "keywtxbXnsRkAHWf9" }).base(
+      "appwB2jkKjE9TCfuP"
+    );
+
+    base("users")
+      .select({
+        filterByFormula: `{user_id} = "${user.id}"`,
+      })
+      .firstPage(function (err, records) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        records.forEach(function (record) {
+          console.log("Retrieved", record.get("name"));
+          const embed = new EmbedBuilder()
+            .setColor("#cc2b5e")
+            .setTitle("User info")
+            .setDescription(
+              `**UserName:** ${record.get("name")}\n
+              **user id:** ${record.get("user_id")}\n
+              **Avatar:** ${record.get("avatar")}
+              `
+            );
+          interaction.reply({ embeds: [embed] });
+        });
+      });
+  }
+
+  else if (commandName === "servers") {
+    await interaction.reply(`
+    I am in ${client.guilds.cache.size} servers
+    Server list: ${client.guilds.cache.map((guild) => guild.name).join(", ")}
+    Server
+    `
+    );
+  }
+
+  console.log(interaction.user.tag + " - " + commandName);
 });
 
 // Login to Discord with your client's token

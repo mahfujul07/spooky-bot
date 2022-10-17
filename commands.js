@@ -69,9 +69,35 @@ const commands = [
         .setRequired(true)
     ),
 
+  // stores the user id in local storage
+  new SlashCommandBuilder()
+    .setName("store")
+    .setDescription("Stores the user id in local storage")
+    .addUserOption((option) =>
+      option
+        .setName("user")
+        .setDescription("The user to store")
+        .setRequired(true)
+    ),
+
+  // gets the user id from local storage
+  new SlashCommandBuilder()
+    .setName("show")
+    .setDescription("Gets the user id from local storage")
+    .addUserOption((option) =>
+      option
+        .setName("user")
+        .setDescription("The user to show")
+        .setRequired(true)
+    ),
+
   new SlashCommandBuilder()
     .setName("owner")
     .setDescription("Shows the owner of the bot!"),
+
+  new SlashCommandBuilder()
+    .setName("servers")
+    .setDescription("Shows how many servers the bot is in!"),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "10" }).setToken(token);
