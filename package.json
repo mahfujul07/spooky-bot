@@ -2,10 +2,10 @@
   "name": "spooky-bot",
   "version": "1.0.0",
   "description": "This is a Discord bot made for fun and cool commands",
-  "main": "index.js",
+  "main": "deploy-commands.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node deploy-commands.js",
+    "dev": "nodemon deploy-commands.js"
   },
   "keywords": [],
   "author": "",
