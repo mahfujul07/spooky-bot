@@ -72,8 +72,25 @@ const commands = [
     ),
 
   new SlashCommandBuilder()
-    .setName("servers")
-    .setDescription("Shows how many servers the bot is in!"),
+    .setName("store")
+    .setDescription("Stores a user in the database!")
+    .addUserOption((option) =>
+      option
+        .setName("user")
+        .setDescription("The user to store")
+        .setRequired(true)
+    ),
+
+  new SlashCommandBuilder()
+
+    .setName("show")
+    .setDescription("Shows a user from the database!")
+    .addUserOption((option) =>
+      option
+        .setName("user")
+        .setDescription("The user to show")
+        .setRequired(true)
+    ),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "10" }).setToken(token);
