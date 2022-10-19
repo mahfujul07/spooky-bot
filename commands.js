@@ -74,39 +74,6 @@ const commands = [
   new SlashCommandBuilder()
     .setName("servers")
     .setDescription("Shows how many servers the bot is in!"),
-
-  // currency bot commands
-  new SlashCommandBuilder()
-    .setName("profile")
-    .setDescription("Shows your profile!")
-    .addUserOption((option) =>
-      option
-        .setName("user")
-        .setDescription("The user to show profile")
-        .setRequired(true)
-    ),
-
-  new SlashCommandBuilder()
-    .setName("daily")
-    .setDescription("Claim your daily reward!"),
-
-  new SlashCommandBuilder()
-    .setName("balance")
-    .setDescription("Shows your balance!")
-    .addUserOption((option) =>
-      option
-        .setName("user")
-        .setDescription("The user to show balance")
-        .setRequired(true)
-    ),
-
-  new SlashCommandBuilder()
-    .setName("leaderboard")
-    .setDescription("Shows the leaderboard!"),
-
-  new SlashCommandBuilder().setName("beg").setDescription("Beg for money!"),
-
-  new SlashCommandBuilder().setName("work").setDescription("Work for money!"),
 ].map((command) => command.toJSON());
 
 const rest = new REST({ version: "10" }).setToken(token);
