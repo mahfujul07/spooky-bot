@@ -23,6 +23,7 @@ module.exports = {
           "/avatar - avatar of user \n" +
           "/bot - Info about the bot \n" +
           "/quiz - Quiz questions \n" +
+          "/fact - Sends a random fact \n" +
           "/slap - Slap a user \n" +
           "/kiss - Kiss a user \n" +
           "/pat - Pat a user \n" +
