@@ -4,8 +4,9 @@
   "description": "This is a Discord bot made for fun and cool commands",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "node commands.js",
+    "dev": "nodemon index.js",
+    "currency": "node ./upload/currencyCMD.js"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "discord-api-types": "^0.37.14",
     "discord.js": "^14.6.0",
     "dotenv": "^16.0.3",
+    "firebase": "^9.13.0",
     "fs": "^0.0.1-security",
     "node-fetch": "^3.2.10",
     "nodemon": "^2.0.20",

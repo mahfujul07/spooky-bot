@@ -3,19 +3,9 @@ const { ActivityType } = require("discord.js");
 module.exports = (client) => {
   client.pickPresence = async () => {
     const options = [
-    //   {
-    //     type: ActivityType.Watching,
-    //     text: "your server",
-    //     status: "online",
-    //   },
-    //   {
-    //     type: ActivityType.Listening,
-    //     text: "to /help",
-    //     status: "online",
-    //   },
       {
         type: ActivityType.Streaming,
-        text: "with rick astley",
+        text: "WITH RICK ASTLEY",
         status: "online",
         url: "https://www.youtube.com/watch?v=xvFZjo5PgG0",
       },
