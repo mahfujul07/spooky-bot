@@ -1,7 +1,9 @@
 /node_modules
 
 .env
+.env.local
+
 /.idea
 /randoms
 
-config.json
+./config.json

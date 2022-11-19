@@ -13,16 +13,10 @@ module.exports = {
   async execute(interaction) {
     const embed = new EmbedBuilder()
       .setColor("#cc2b5e")
-      .setTitle("Help")
+      .setTitle("Economy Help Menu")
       .setDescription(
-        "``` \n" +
-            "Economy Commands \n" +
-            " \n" +
-            "bal - Shows your balance \n" +
-            "daily - Gives you your daily coins \n" +
-          "```"
+        "```md\n# Economy Commands\n\n# bal\nShows your balance\n\n# beg\nBeg for money\n\n# buy\nBuy an item\n\n# daily\nClaim your daily reward\n\n# deposit\nDeposit money into your bank\n\n# fish\nFish for money\n\n# leaderboard\nShows the leaderboard\n\n# pay\nPay someone money\n\n# rob\nRob someone\n\n# sell\nSell an item\n\n# shop\nShows the shop\n\n# withdraw\nWithdraw money from your bank\n\n# work\nWork for money\n\n# Database\n Saves Your Server to the Database```"
       );
-
     const row = new ActionRowBuilder()
       .addComponents(
         new ButtonBuilder()
