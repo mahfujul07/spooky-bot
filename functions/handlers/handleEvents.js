@@ -10,7 +10,7 @@ module.exports = (client) => {
         .filter((file) => file.endsWith(".js"));
 
       switch (folder) {
-        case ("client"):
+        case "client":
           for (const file of eventFiles) {
             const event = require(`../../events/${folder}/${file}`);
             if (event.once)
